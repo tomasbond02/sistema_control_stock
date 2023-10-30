@@ -1,0 +1,14 @@
+.footerContainer{
+    max-width: 600px;
+    width: 800px;
+    margin: 0 auto;
+}
+
+
+.linksRedes{
+    background-color: #ffcc59;
+    display: flex;
+    justify-content: center;
+  }
+
+  
