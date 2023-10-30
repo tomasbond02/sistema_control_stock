@@ -3,7 +3,8 @@ import Router, { useRouter } from 'next/router'
 import Image from 'next/image'
 import styles from '../styles/Home.module.css'
 import TextField from '@mui/material/TextField';
-import IconLabelButtons from '@/comoponents/buton';
+import Button from '@mui/material/Button';
+import SendIcon from '@mui/icons-material/Send';
 
 
 const Home: NextPage = () => {
@@ -18,17 +19,26 @@ const Home: NextPage = () => {
         alt="Picture of the author"
         />
         <TextField
-        helperText="Please enter your username"
-        id="demo-helper-text-aligned"
-        label="USERNAME"
+          margin='normal'
+          required
+          id="filled-required"
+          label="Required"
+          variant="filled"
         />
         <TextField
-          helperText=" Please enter your password  "
-          id="demo-helper-text-aligned-no-helper"
-          label="PASSWORD"
+          margin='normal'
+          id="standard-password-input"
+          label="Password"
+          type="password"
+          autoComplete="current-password"
+          variant="standard"
         />
 
-        <IconLabelButtons/>
+      <Button variant="contained" endIcon={<SendIcon />}
+      onClick={() => router.push('/indexEmp')}
+      >
+        Send
+      </Button>
       </div>
     </div>
   )
