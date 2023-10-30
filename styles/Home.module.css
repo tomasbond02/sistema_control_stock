@@ -1,12 +1,17 @@
 
+
 .general{
   max-width: 600px;
   width: 800px;
   margin: 0 auto;
 }
 
-.head{
-  text-align: center;
+.containerInicio{
+  display: flex;
+  align-items: center;
+  padding-top: 25%;
+  justify-content: center;
+  flex-direction: column;
 }
 
 @media (max-width: 600px) {
