@@ -5,10 +5,23 @@ import styles from '../styles/Home.module.css'
 import TextField from '@mui/material/TextField';
 import Button from '@mui/material/Button';
 import SendIcon from '@mui/icons-material/Send';
+import { useState } from 'react';
 
 
 const Home: NextPage = () => {
   const router = useRouter()
+  const [usuario, setUser] = useState('');
+  const [contraseña, setPassword] = useState('');
+
+  const userName = (event: React.ChangeEvent<HTMLInputElement>) => {
+    setUser(event.target.value);
+  };
+
+  const passWord = (event: React.ChangeEvent<HTMLInputElement>) => {
+    setPassword(event.target.value);
+  };
+
+
   return (
     <div className={styles.general}>
       <div className={styles.containerInicio}>
@@ -20,10 +33,10 @@ const Home: NextPage = () => {
         />
         <TextField
           margin='normal'
-          required
           id="filled-required"
-          label="Required"
+          label="Username"
           variant="filled"
+          onChange={userName}
         />
         <TextField
           margin='normal'
@@ -32,12 +45,23 @@ const Home: NextPage = () => {
           type="password"
           autoComplete="current-password"
           variant="standard"
+          onChange={passWord}
         />
 
       <Button variant="contained" endIcon={<SendIcon />}
-      onClick={() => router.push('/indexEmp')}
+      onClick={() => {
+        if(usuario == "empleado" && contraseña == "empleado"){
+          router.push("/indexEmp")
+        }
+        else if(usuario == "admin" && contraseña == "admin"){
+          router.push("/indexAdmin")
+        }
+        else{
+          alert("usuario o contraseña incorrecta")
+        }
+      }}
       >
-        Send
+        Enter
       </Button>
       </div>
     </div>
