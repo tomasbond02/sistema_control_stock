@@ -1,0 +1,11 @@
+
+.rightBar{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.mainStyles{
+    display: flex;
+    align-items: center;
+}
