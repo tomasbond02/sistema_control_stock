@@ -26,9 +26,9 @@ const Home: NextPage = () => {
     <div className={styles.general}>
       <div className={styles.containerInicio}>
         <Image
-        src="/logoRivera.jpeg"
-        width={100}
-        height={100}
+        src="/logoRivera.jpg"
+        width={200}
+        height={200}
         alt="Picture of the author"
         />
         <TextField
@@ -69,4 +69,3 @@ const Home: NextPage = () => {
 }
 
 export default Home
-

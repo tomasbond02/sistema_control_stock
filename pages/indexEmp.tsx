@@ -3,10 +3,11 @@ import Router, { useRouter } from 'next/router'
 import Image from 'next/image'
 import styles from '../styles/employedStyles.module.css'
 import { Button, ButtonGroup } from '@mui/material'
-
+import modifOrdCompra from '../comoponents/modificarOrdenCompra'
 
 const Empleado: NextPage = () => {
     const router = useRouter()
+    var busOrdCom = false
     return (
       <div className={styles.general}>
         <h1>EMPLEADO</h1>
@@ -21,7 +22,7 @@ const Empleado: NextPage = () => {
               </Button> 
               <Button
                 onClick={() => {
-                  
+                  busOrdCom = true
                 }}
                 >CONSULTAR STOCK
               </Button>
@@ -37,10 +38,16 @@ const Empleado: NextPage = () => {
                 }}
                 >REGISTRAR MERCADERIA
               </Button>
+              <Button
+                onClick={() => {
+                  router.push('/')
+                }}
+                >CERRAR SESIÓN
+              </Button>
             </ButtonGroup>
           </div>
             <div>
-              <h2>hola</h2>
+            
             </div>
         </div>
       </div>
