@@ -1,13 +1,15 @@
 import type { NextPage } from 'next'
 import Router, { useRouter } from 'next/router'
-import Image from 'next/image'
 import styles from '../styles/employedStyles.module.css'
 import { Button, ButtonGroup } from '@mui/material'
-import modifOrdCompra from '../comoponents/modificarOrdenCompra'
+import { useState } from 'react'
+import EnhancedTable from '../components/ordenCompraEmpleado'
+
 
 const Empleado: NextPage = () => {
     const router = useRouter()
-    var busOrdCom = false
+    const [showTable,setShowTable] = useState(false)
+
     return (
       <div className={styles.general}>
         <h1>EMPLEADO</h1>
@@ -16,13 +18,14 @@ const Empleado: NextPage = () => {
             <ButtonGroup variant="text" className={styles.rightBar}>
               <Button 
                 onClick={() => {
-                  
+                  setShowTable(!showTable)
+                  console.log(showTable)
                 }}
                 >BUSCAR ORDEN DE COMPRA
               </Button> 
               <Button
                 onClick={() => {
-                  busOrdCom = true
+                  
                 }}
                 >CONSULTAR STOCK
               </Button>
@@ -47,7 +50,7 @@ const Empleado: NextPage = () => {
             </ButtonGroup>
           </div>
             <div>
-            
+                {showTable && <EnhancedTable/>}
             </div>
         </div>
       </div>
