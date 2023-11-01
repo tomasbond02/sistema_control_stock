@@ -3,7 +3,7 @@ import Router, { useRouter } from 'next/router'
 import styles from '../styles/employedStyles.module.css'
 import { Button, ButtonGroup } from '@mui/material'
 import { useState } from 'react'
-import EnhancedTable from '../components/ordenCompraEmpleado'
+import BasicTable from '../components/ordenCompraEmpleado'
 
 
 const Empleado: NextPage = () => {
@@ -50,7 +50,7 @@ const Empleado: NextPage = () => {
             </ButtonGroup>
           </div>
             <div>
-                {showTable && <EnhancedTable/>}
+                {showTable && <BasicTable/>}
             </div>
         </div>
       </div>
