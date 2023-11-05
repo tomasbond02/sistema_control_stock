@@ -6,45 +6,32 @@ import TableContainer from '@mui/material/TableContainer';
 import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
 import Paper from '@mui/material/Paper';
-
-function createData(
-  name: number,
-  datas: string
-  
-) {
-  return { name, datas};
-}
-
-const rows = [
-  createData(1, "10 kilos de halo"),
-  createData(2, "adios"),
-  createData(3,"ajajaksld"),
-  createData(4, "dsjfaosjf"),
-  createData(5, "dsjiofas"),
-];
+import { useState } from 'react';
+import Row from './row';
 
 export default function BasicTable() {
+  const [showModif, setShowModif] = useState(false)
+  const [rows, setRows] = useState([
+    { orden: 1, compra: "1kg de chocolate" },
+    { orden: 2, compra: "1/4 ddl" }
+  ])
+
   return (
     <TableContainer component={Paper}>
       <Table sx={{ minWidth: 650 }} aria-label="simple table">
         <TableHead>
           <TableRow>
             <TableCell>Orden de Compra</TableCell>
-            <TableCell align="right">datos</TableCell>
+            <TableCell align="right">Compra</TableCell>
+            <TableCell align="right">Acción</TableCell>
           </TableRow>
         </TableHead>
         <TableBody>
-          {rows.map((row) => (
-            <TableRow
-              key={row.name}
-              sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
-            >
-              <TableCell component="th" scope="row">
-                {row.name}
-              </TableCell>
-              <TableCell align="right">{row.datas}</TableCell>
-            </TableRow>
-          ))}
+          {
+            rows.map((row: any, i: number) => (
+              <Row key={i} compra={row.compra} orden={row.orden} setRows={setRows}></Row>
+            ))
+          }
         </TableBody>
       </Table>
     </TableContainer>

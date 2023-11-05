@@ -1,10 +1,10 @@
-import React from 'react'
+// pages/modifOrdCompra.tsx
+import { NextPage } from 'next';
 
-
-const modifOrdCompra = () => {
+const ModifOrdCompra: NextPage = () => {
   return (
-    <h1>hola</h1>
-  )
-}
+    <div>hola</div>
+  );
+};
 
-export default modifOrdCompra
+export default ModifOrdCompra;
