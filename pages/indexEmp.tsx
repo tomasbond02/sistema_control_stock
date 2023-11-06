@@ -16,7 +16,7 @@ const Empleado: NextPage = () => {
     <div className={styles.general}>
       <h1>EMPLEADO</h1>
       <div className={styles.mainStyles}>
-        <div >
+        <div className={styles.botones}>
           <ButtonGroup variant="text" className={styles.rightBar}>
             <Button onClick={() => setComponent(<BasicTable />)}>BUSCAR ORDEN DE COMPRA</Button>
             <Button onClick={() => setComponent(<StockTable />)}>CONSULTAR STOCK</Button>
