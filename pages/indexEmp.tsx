@@ -5,6 +5,7 @@ import { Button, ButtonGroup } from '@mui/material'
 import { useState } from 'react'
 import BasicTable from '../components/ordenCompra/ordenCompraEmpleado'
 import StockTable from '@/components/stock/stock'
+import AddProductModal from '@/components/stock/addProductModal'
 
 const Empleado: NextPage = () => {
   const router = useRouter()
@@ -27,7 +28,7 @@ const Empleado: NextPage = () => {
             </Button>
             <Button
               onClick={() => {
-
+                setComponent(<AddProductModal/>)
               }}
             >REGISTRAR MERCADERIA
             </Button>

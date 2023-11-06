@@ -53,7 +53,7 @@ const Home: NextPage = () => {
         if(usuario == "empleado" && contraseña == "empleado"){
           router.push("/indexEmp")
         }
-        else if(usuario == "admin" && contraseña == "admin"){
+        else if(usuario == "dueño" && contraseña == "dueño"){
           router.push("/indexAdmin")
         }
         else{

@@ -3,10 +3,16 @@ import Router, { useRouter } from 'next/router'
 import Image from 'next/image'
 import styles from '../styles/employedStyles.module.css'
 import { Button, ButtonGroup } from '@mui/material'
+import { useState } from 'react'
+import BasicTable from '../components/usuarios/usuarios'
+import Reportes from '@/components/reportes/reporte'
+
 
 
 const Admin: NextPage = () => {
     const router = useRouter()
+    const [Component, setComponent] = useState<JSX.Element>()
+
     return (
       <div className={styles.general}>
         <h1>DUEÑO</h1>
@@ -14,28 +20,12 @@ const Admin: NextPage = () => {
           <div >
             <ButtonGroup variant="text" className={styles.rightBar}>
               <Button 
-                onClick={() => {
-                  
-                }}
-                >BUSCAR ORDEN DE COMPRA
-              </Button> 
+                onClick={() => setComponent(<BasicTable />)}>USUARIOS</Button> 
               <Button
                 onClick={() => {
-                  
+                  setComponent(<Reportes />)
                 }}
-                >CONSULTAR STOCK
-              </Button>
-              <Button
-                onClick={() => {
-                  
-                }}
-                >REGISTRAR VENTA
-              </Button>
-              <Button
-                onClick={() => {
-                  
-                }}
-                >REGISTRAR MERCADERIA
+                >REPORTES
               </Button>
               <Button
                 onClick={() => {
@@ -46,7 +36,7 @@ const Admin: NextPage = () => {
             </ButtonGroup>
           </div>
             <div>
-              <h2>hola</h2>
+              {Component}
             </div>
         </div>
       </div>
