@@ -9,7 +9,6 @@ import Paper from '@mui/material/Paper';
 import { useState } from 'react';
 import Row from './row';
 import { Box } from '@mui/material';
-import AddProductModal from './addProductModal';
 
 export default function StockTable() {
   const [rows, setRows] = useState([
@@ -19,9 +18,6 @@ export default function StockTable() {
 
   return (
     <Box>
-      <Box>
-        <AddProductModal setRows={setRows} />
-      </Box>
       <TableContainer component={Paper}>
         <Table sx={{ minWidth: 650 }} aria-label="stock table">
           <TableHead>
@@ -33,7 +29,7 @@ export default function StockTable() {
           <TableBody>
             {
               rows.map((row: any, i: number) => (
-                <Row key={i} producto={row.producto} cantidad={row.cantidad} setRows={setRows}></Row>
+                <Row key={i} producto={row.producto} cantidad={row.cantidad}></Row>
               ))
             }
           </TableBody>

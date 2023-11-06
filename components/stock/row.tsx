@@ -4,16 +4,9 @@ import React from 'react'
 interface RowProps {
     cantidad: number;
     producto: string;
-    setRows: (val: any) => void;
 }
 
-const Row = ({ cantidad, producto, setRows }: RowProps) => {
-
-    function handleChange(n: number) {
-        setRows((rows: any) => rows.map((row: any) => {
-            return row.producto === producto ? { producto, cantidad: row.cantidad + n } : row;
-        }))
-    }
+const Row = ({ cantidad, producto }: RowProps) => {
 
     return (
         <TableRow sx={{ '&:last-child td, &:last-child th': { border: 0 } }}>
@@ -21,9 +14,7 @@ const Row = ({ cantidad, producto, setRows }: RowProps) => {
                 {producto}
             </TableCell>
             <TableCell align='right'>
-            <Button onClick={() => handleChange(1)}>+</Button>
             {cantidad}
-            <Button onClick={() => handleChange(-1)}>-</Button>                
             </TableCell>
         </TableRow>
     )
